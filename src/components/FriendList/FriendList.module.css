@@ -1,0 +1,17 @@
+.friend-list {
+  background-color: aquamarine;
+}
+.item {
+  list-style: none;
+}
+.status {
+    height: 20px;
+    width: 20px;
+    /* display: inline-block; */
+    border-radius: 50%;
+    background-color: red;
+}
+.avatar {
+}
+.name {
+}
