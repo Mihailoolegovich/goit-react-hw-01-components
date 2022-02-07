@@ -1,16 +1,21 @@
+import styles from './Statustics.module.css';
+
 import PropTypes from 'prop-types';
 
 export default function Statistics({ title, props }) {
-  // const {id, label, percentage} = props;
   return (
-    <section className="statistics">
-      {title && <h2 className="title">{title}</h2>}
+    <section className={styles.statistics}>
+      {title && <h2 className={styles.title}>{title}</h2>}
 
-      <ul className="stat-list">
+      <ul className={styles.statList}>
         {props.map(({ id, label, percentage }) => (
-          <li className="item" key={id}>
-            <span className="label">{label}</span>
-            <span className="percentage">{percentage}</span>
+          <li
+            className={styles.item}
+            style={{ backgroundColor: rondomColor() }}
+            key={id}
+          >
+            <span className={styles.label}>{label}</span>
+            <span className={styles.percentage}>{percentage}</span>
           </li>
         ))}
       </ul>
@@ -22,3 +27,6 @@ Statistics.propTypes = {
   label: PropTypes.string,
   percentage: PropTypes.number,
 };
+function rondomColor() {
+  return `#${Math.floor(Math.random() * 16777215).toString(16)}`;
+}
